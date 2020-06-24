@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinLayout.MainPage">
+
+    <StackLayout>
+        <StackLayout Spacing="50" >
+
+            <!-- Place new controls here -->
+            <Label Text="Vários exemplos de uso de Layouts" FontSize="25" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+            <Button Text="Stack"    Clicked="VaiParaStack"      />
+            <Button Text="Grid"     Clicked="VaiParaGrid"       />
+            <Button Text="Absolute" Clicked="VaiParaAbsolute"   />
+            <Button Text="Relative" Clicked="VaiParaRelative"   />
+            <Button Text="Scroll"   Clicked="VaiParaScroll"     />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

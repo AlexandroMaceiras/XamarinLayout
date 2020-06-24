@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinLayout.Layouts.Relative.RelativePage">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!-- RelativeToParent é a relação ao PAI (RelativeLayout) então eu não preciso usar o ElementName, Property=Width é a proporcionalidade a o quê influencia na width neste elemento filho  -->
+            <!-- Factor e um perentual do elemento pai ou do elemento citado em ElementName, Constant é um valor a mais ou a menos no total  -->
+            <BoxView RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.4, Constant=0}" BackgroundColor="Blue" x:Name="GeradoDepois" />
+
+            <BoxView RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=GeradoDepois, Property=X, Factor=1, Constant=20}" BackgroundColor="Yellow"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=GeradoDepois, Property=Y, Factor=1, Constant=20}" />
+
+            <BoxView BackgroundColor="Red" Margin="200" WidthRequest="100" x:Name="Vermelho" />
+            <BoxView BackgroundColor="Green" 
+                     WidthRequest="100" HeightRequest="100"
+                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Vermelho, Property=X, Factor=1, Constant=20}" 
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Vermelho, Property=X, Factor=1, Constant=20}" 
+                     />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
